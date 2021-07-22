@@ -1,0 +1,38 @@
+//main css file
+
+@import 'C:/xampp/htdocs/laravel-reflection/resources/scss/_login.scss';
+@import 'C:/xampp/htdocs/laravel-reflection/resources/scss/_index.scss';
+@import 'C:/xampp/htdocs/laravel-reflection/resources/scss/_employees.scss';
+@import 'C:/xampp/htdocs/laravel-reflection/resources/scss/_employees_list.scss';
+
+body { /*base for site*/
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: .4px;
+  color: #666;
+  line-height: 1.42857143;
+  background-color: rgba(0,0,0,.03);
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px;
+}
+
+.header {
+  width: 100vw;
+  height: 100px;
+  background-color: #80aaff;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    margin: 0px;
+    color: #FFFFFF;
+  }
+  h2 {
+    color: #ff944d;
+  }
+}
