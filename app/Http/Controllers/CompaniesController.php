@@ -16,6 +16,13 @@ class CompaniesController extends Controller
   public function save(Request $request)
     {
 
+      $request->validate([
+        'name' => 'required',
+        'email' => 'required|email|unique:companies,email',
+        // 'logo' => 'image',
+        'website' => 'required'
+      ]);
+
       $company = new Company; //model - tables need models
       $company->id = $request->id;
       $company->name = $request->name;
