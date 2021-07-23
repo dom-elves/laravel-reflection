@@ -32,8 +32,10 @@ Route::view('/thankyou', 'auth.thankyou');
 
 Route::post('/companies', CompaniesController::class . '@save')->name('manage.companies.save');
 Route::post('/employees', EmployeesController::class . '@save')->name('manage.employees.save');
-// Route::post('/employees', EmployeesController::class . '@validate')->name('manage.employees.save');
 Route::post('/signup', LoginController::class . '@save')->name('auth.signup.save');
+
+// Route::post('/employees-list', EmployeesController::class . '@destroy')->name('manage.employees-list.destroy');
+Route::delete('/employees-list', EmployeesController::class . '@destroy')->name('manage.employees-list.destroy');
 
 Route::get('/companies', CompaniesController::class . '@create')->name('manage.companies');
 Route::get('/employees', EmployeesController::class . '@create')->name('manage.employees');

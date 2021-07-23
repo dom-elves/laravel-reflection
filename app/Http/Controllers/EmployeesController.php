@@ -37,4 +37,9 @@ class EmployeesController extends Controller
       return redirect('/employees');
     }
 
+    public function destroy()
+    {
+      dd('test');
+    }
+
 }

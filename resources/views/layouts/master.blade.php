@@ -1,4 +1,5 @@
 <head>
+ <script src="https://kit.fontawesome.com/33e7ba0ce6.js" crossorigin="anonymous"></script>
  <link href="{{ asset('/assets/css/app.css') }}" rel="stylesheet">
 </head>
 
@@ -7,14 +8,20 @@
 <header>
   <div class="header">
     <div class="titles">
-      <h1>header on every page</h1>
-      <h2>(hopefully)</h2>
+      <h1>Welcome to the administration center</h1>
+      <h2>Please log in to proceed</h2>
     </div>
-    <div>
-      <a href="/index"><button>home</button></a>
+
+    <div class="home-button">
+      <a href="/index"><button><i class="fas fa-home"></i></button></a>
     </div>
+
   </div>
+
+
+
 </header>
+
 
 <div>
 @yield('login')

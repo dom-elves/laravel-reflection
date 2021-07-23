@@ -19,20 +19,40 @@ body { /*base for site*/
   margin: 0px;
 }
 
-.header {
-  width: 100vw;
-  height: 100px;
+header {
+  width: 100%;
+  height: 150px;
   background-color: #80aaff;
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  h1 {
-    margin: 0px;
-    color: #FFFFFF;
+  .header {
+
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+    h1 {
+      margin: 0px;
+      color: #FFFFFF;
+    }
+    h2 {
+      color: #FFFFFF;
+    }
   }
-  h2 {
-    color: #ff944d;
+}
+
+.home-button {
+  button {
+    background-color: #80aaff;
+    color: #FFFFFF;
+    border-radius: 5px;
+    border: 2px solid #FFFFFF;
+    height: 80px;
+    width: 80px;
+    font-size: 50px;
+    &:hover {
+      background-color: #FFFFFF;
+      color: #80aaff;
+    }
   }
 }
