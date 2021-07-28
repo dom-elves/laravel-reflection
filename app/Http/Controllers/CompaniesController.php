@@ -33,4 +33,10 @@ class CompaniesController extends Controller
 
       return redirect('/companies');
     }
+    public function destroy($id)
+      {
+        $employee=Company::find($id);
+        $employee->delete();
+        dd('success');
+      }
 }

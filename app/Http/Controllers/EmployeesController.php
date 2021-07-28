@@ -13,9 +13,11 @@ class EmployeesController extends Controller
       return view('manage.employees');
     }
 
+
+
   public function save(Request $request)
     {
-
+      // dd('test');
       $request->validate([
         'first_name' => 'required',
         'last_name' => 'required',
@@ -23,8 +25,7 @@ class EmployeesController extends Controller
         'phone_number' => 'numeric',
         'company' => 'nullable|unique:employees,company'
       ]);
-
-
+      // dd('test');
       $employee = new Employee; //model - tables need models
       $employee->first_name = $request->first_name;
       $employee->last_name = $request->last_name;
@@ -33,13 +34,40 @@ class EmployeesController extends Controller
       $employee->phone_number = $request->phone_number;
       $employee->password = $request->password;
       $employee->save();
-
-      return redirect('/employees');
+      // dd('test');
+      return redirect('/employees-list');
     }
 
-    public function destroy()
+
+
+  public function destroy($id)
     {
-      dd('test');
+      $employee = Employee::find($id);
+      $employee->delete();
+
+      return redirect('/employees-list');
     }
 
+
+
+  public function edit($id)
+    {
+      $employee = Employee::find($id);
+      return view('manage.edit' , ['employee' => $employee]);
+    }
+
+
+
+  public function update(Request $request, $id)
+    {
+      $employee = Employee::find($id);
+      $employee->first_name = $request->first_name;
+      $employee->last_name = $request->last_name;
+      $employee->email = $request->email;
+      $employee->company = $request->company;
+      $employee->phone_number = $request->phone_number;
+      $employee->save();
+
+      return redirect('/employees-list');
+    }
 }

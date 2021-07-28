@@ -34,13 +34,22 @@ Route::post('/companies', CompaniesController::class . '@save')->name('manage.co
 Route::post('/employees', EmployeesController::class . '@save')->name('manage.employees.save');
 Route::post('/signup', LoginController::class . '@save')->name('auth.signup.save');
 
-// Route::post('/employees-list', EmployeesController::class . '@destroy')->name('manage.employees-list.destroy');
-Route::delete('/employees-list', EmployeesController::class . '@destroy')->name('manage.employees-list.destroy');
+
+Route::post('/employees-list/edit/{id}', EmployeesController::class . '@update')->name('manage.employees-list.update');
+Route::get('/employees-list/edit/{id}', EmployeesController::class . '@edit')->name('manage.employees-list.edit');
+Route::post('/employees-list/{id}', EmployeesController::class . '@destroy')->name('manage.employees-list.destroy');
+
+
+Route::post('/companies-list/{id}', CompaniesController::class . '@destroy')->name('manage.companies-list.destroy');
+
 
 Route::get('/companies', CompaniesController::class . '@create')->name('manage.companies');
 Route::get('/employees', EmployeesController::class . '@create')->name('manage.employees');
+
 Route::get('/signup', LoginController::class . '@create')->name('auth.signup');
 Route::get('/login', LoginController::class . '@adminLogin');
+
+
 
 Route::get('/employees-list', function() {
   $employees = DB::table('employees')->paginate(10);

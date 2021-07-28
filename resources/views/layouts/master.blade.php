@@ -33,4 +33,5 @@
 @yield('employees-list')
 @yield('companies')
 @yield('companies-list')
+@yield('employees-edit')
 </div>
