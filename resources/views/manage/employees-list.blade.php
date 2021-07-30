@@ -24,12 +24,9 @@
             <td>{{$employee->email}}</td>
             <td>{{$employee->phone_number}}</td>
             <td>{{$employee->company}}</td>
-
-            <td><button type="sumbit">Delete row</button><td>
+            <td><button type="sumbit" class="delete-button"><i class="fas fa-trash"></i></button><td>
+          <td><button class="edit-button"><a href="{{ route("manage.employees-list.edit",  ['id' => $employee->id]) }}"><i class="fas fa-edit"></i></a></button></td>
           </form>
-
-          <td><a href="{{ route("manage.employees-list.edit",  ['id' => $employee->id]) }}">edit</a></td>
-
         </tr>
     @endforeach
     </table>

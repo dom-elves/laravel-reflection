@@ -1,0 +1,32 @@
+
+
+.delete-button {
+  color: #fc0303;
+  background-color: #FFFFFF;
+  border-radius: 3px;
+  border: 1px solid #fc0303;
+  &:hover {
+    color: #FFFFFF;
+    background-color: #fc0303;
+
+  }
+}
+
+.edit-button {
+  color: #34ad2b;
+  background-color: #FFFFFF;
+  border-radius: 3px;
+  border: 1px solid #34ad2b;
+  // text-decoration: none;
+  &:hover {
+    color: #FFFFFF;
+    background-color: #34ad2b;
+  }
+}
+
+.fa-edit {
+  color: #34ad2b;
+  &:hover {
+    color: #FFFFFF;
+  }
+}

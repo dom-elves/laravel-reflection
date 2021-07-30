@@ -19,9 +19,10 @@
       <td>{{$company->id}}</td>
       <td>{{$company->name}}</td>
       <td>{{$company->email}}</td>
-      <td>{{$company->logo}}</td>
+      <td><a href="{{ route("manage.logos.logos",  ['id' => $company->id]) }}" target="_blank">{{ $company->logo }}</a></td>
       <td>{{$company->website}}</td>
-      <td><button type="sumbit">Delete row</button><td>
+      <td><button type="sumbit" class="delete-button"><i class="fas fa-trash"></i></button><td>
+      <td><button class="edit-button"><a href="{{ route("manage.companies-list.edit",  ['id' => $company->id]) }}"><i class="fas fa-edit"></i></a></button></td>
     </form>
     </tr>
 @endforeach

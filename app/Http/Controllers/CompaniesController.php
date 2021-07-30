@@ -18,7 +18,7 @@ class CompaniesController extends Controller
 
       $request->validate([
         'name' => 'required',
-        'email' => 'required|email|unique:companies,email',
+        // 'email' => 'required|email|unique:companies,email',
         // 'logo' => 'image',
         'website' => 'required'
       ]);
@@ -27,16 +27,46 @@ class CompaniesController extends Controller
       $company->id = $request->id;
       $company->name = $request->name;
       $company->email = $request->email;
-      $company->logo = $request->logo;
+      $company->logo = $request->logo->storeAs('public', $request->logo->getClientOriginalName());
       $company->website = $request->website;
       $company->save();
 
-      return redirect('/companies');
+      return redirect('/companies-list');
     }
+
     public function destroy($id)
       {
-        $employee=Company::find($id);
-        $employee->delete();
-        dd('success');
+        $company=Company::find($id);
+        $company->delete();
       }
+
+
+    public function edit($id)
+      {
+        $company = Company::find($id);
+        return view('manage.edit-companies' , ['company' => $company]);
+      }
+
+
+    public function update(Request $request, $id)
+      {
+        $company = Company::find($id);
+        $company->id = $request->id;
+        $company->name = $request->name;
+        $company->email = $request->email;
+        $company->logo = $request->logo;
+        $company->website = $request->website;
+        $company->save();
+
+        return redirect('/companies-list');
+      }
+
+     public function logos($id)
+       {
+         $company = Company::find($id);
+         dd('test');
+         return view('manage.logos', ['company' => $company]);
+       }
+
+
 }

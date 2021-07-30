@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Employee;
 
+
 class EmployeesController extends Controller
 {
 
@@ -45,7 +46,7 @@ class EmployeesController extends Controller
       $employee = Employee::find($id);
       $employee->delete();
 
-      return redirect('/employees-list');
+      return redirect('/delete');
     }
 
 
@@ -53,7 +54,7 @@ class EmployeesController extends Controller
   public function edit($id)
     {
       $employee = Employee::find($id);
-      return view('manage.edit' , ['employee' => $employee]);
+      return view('manage.edit-employees' , ['employee' => $employee]);
     }
 
 

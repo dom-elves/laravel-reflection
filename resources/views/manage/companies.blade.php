@@ -5,7 +5,7 @@
 <h1>add a new company</h1>
 
 <div class="create-employee">
-  <form action="{{ route("manage.companies.save") }}" method="post">
+  <form action="{{ route("manage.companies.save") }}" method="post" enctype="multipart/form-data">
     @csrf
 
      <label for="name"><b>Company Name</b></label>
