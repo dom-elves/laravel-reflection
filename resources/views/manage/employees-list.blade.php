@@ -15,18 +15,24 @@
       </tr>
     @foreach ($employees as $employee)
         <tr>
-          <form method="POST" action="{{ route("manage.employees-list.destroy",  ['id' => $employee->id]) }}">
-            @method('POST')
-            @csrf
+
             <td>{{$employee->id}}</td>
             <td>{{$employee->first_name}}</td>
             <td>{{$employee->last_name}}</td>
             <td>{{$employee->email}}</td>
             <td>{{$employee->phone_number}}</td>
             <td>{{$employee->company}}</td>
-            <td><button type="sumbit" class="delete-button"><i class="fas fa-trash"></i></button><td>
-          <td><button class="edit-button"><a href="{{ route("manage.employees-list.edit",  ['id' => $employee->id]) }}"><i class="fas fa-edit"></i></a></button></td>
-          </form>
+            <form method="POST" action="{{ route("manage.employees-list.destroy",  ['id' => $employee->id]) }}">
+              @method('POST')
+              @csrf
+            <td>
+              <button type="submit" class="delete-button">
+              <i class="fas fa-trash"></i>
+            </button>
+          </td>
+        </form>
+          <td class="edit-button"><a href="{{ route('manage.employees-list.edit',  ['id' => $employee->id]) }}"><i class="fas fa-edit"></i></a></td>
+
         </tr>
     @endforeach
     </table>

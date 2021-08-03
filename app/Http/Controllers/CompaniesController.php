@@ -38,6 +38,7 @@ class CompaniesController extends Controller
       {
         $company=Company::find($id);
         $company->delete();
+        return view('/delete');
       }
 
 
@@ -64,8 +65,10 @@ class CompaniesController extends Controller
      public function logos($id)
        {
          $company = Company::find($id);
-         dd('test');
-         return view('manage.logos', ['company' => $company]);
+         // $logo = $company->file->('logo')->storeAs($company->logo->getClientOriginalName());
+         $logo = $company->logo->storeAs('public', $company->logo->getClientOriginalName());
+
+         return view('manage.company-logos' , ['logo' => $company]);
        }
 
 

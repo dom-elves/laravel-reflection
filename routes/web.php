@@ -36,17 +36,18 @@ Route::post('/employees', EmployeesController::class . '@save')->name('manage.em
 Route::post('/signup', LoginController::class . '@save')->name('auth.signup.save');
 
 
-Route::post('/employees-list/edit-employees/{id}', EmployeesController::class . '@update')->name('manage.employees-list.update');
 Route::get('/employees-list/edit-employees/{id}', EmployeesController::class . '@edit')->name('manage.employees-list.edit');
+Route::post('/employees-list/edit-employees/{id}', EmployeesController::class . '@update')->name('manage.employees-list.update');
 
+Route::get('/companies-list/edit-companies/{id}', CompaniesController::class . '@edit')->name('manage.companies-list.edit');
+Route::post('/companies-list/edit-companies/{id}', CompaniesController::class . '@update')->name('manage.companies-list.update');
 
-Route::post('/companies-list/{id}', CompaniesController::class . '@update')->name('manage.companies-list.update');
-Route::get('/companies-list/{id}', CompaniesController::class . '@edit')->name('manage.companies-list.edit');
-
-Route::view('/manage/logos/{id}', CompaniesController::class . '@logos')->name('manage.logos.logos');
 
 Route::post('/companies-list/{id}', CompaniesController::class . '@destroy')->name('manage.companies-list.destroy');
 Route::post('/employees-list/{id}', EmployeesController::class . '@destroy')->name('manage.employees-list.destroy');
+
+
+Route::get('/company-logos/{id}', CompaniesController::class . '@logos')->name('manage.company-logos.logos');
 
 
 Route::get('/companies', CompaniesController::class . '@create')->name('manage.companies');
