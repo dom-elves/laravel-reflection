@@ -8,10 +8,7 @@ use App\Models\Employee;
 
 class LoginController extends Controller
 {
-  public function adminLogin(Request $request)
-    {
-      return view('auth.login');
-    }
+
 
   public function create()
     {

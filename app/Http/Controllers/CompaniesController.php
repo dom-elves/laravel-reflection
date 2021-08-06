@@ -51,6 +51,7 @@ class CompaniesController extends Controller
 
     public function update(Request $request, $id)
       {
+
         $company = Company::find($id);
         $company->id = $request->id;
         $company->name = $request->name;
@@ -59,14 +60,16 @@ class CompaniesController extends Controller
         $company->website = $request->website;
         $company->save();
 
+
         return redirect('/companies-list');
       }
 
-     public function logos($id)
+     public function logos(Request $request, $id)
        {
-         $company = Company::find($id);
-         // $logo = $company->file->('logo')->storeAs($company->logo->getClientOriginalName());
-         $logo = $company->logo->storeAs('public', $company->logo->getClientOriginalName());
+          $company = Company::find($id);
+          $company->logo = $request->logo;
+          $logo = $company->logo;
+          dd($logo);
 
          return view('manage.company-logos' , ['logo' => $company]);
        }

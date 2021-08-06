@@ -1,6 +1,7 @@
 <head>
  <script src="https://kit.fontawesome.com/33e7ba0ce6.js" crossorigin="anonymous"></script>
  <link href="{{ asset('/assets/css/app.css') }}" rel="stylesheet">
+ <script type="text/javascript" src="{{ asset('/assets/js/app.js') }}"></script>
 </head>
 
 

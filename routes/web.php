@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\EmployeesController;
 use App\Http\Controllers\CompaniesController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,10 +27,11 @@ Route::get('/', function () {
 });
 
 
-Route::view('/admin', 'admin');
+
 Route::view('/index', 'index');
 Route::view('/delete', 'delete');
 Route::view('/thankyou', 'auth.thankyou');
+
 
 Route::post('/companies', CompaniesController::class . '@save')->name('manage.companies.save');
 Route::post('/employees', EmployeesController::class . '@save')->name('manage.employees.save');
@@ -54,7 +56,10 @@ Route::get('/companies', CompaniesController::class . '@create')->name('manage.c
 Route::get('/employees', EmployeesController::class . '@create')->name('manage.employees');
 
 Route::get('/signup', LoginController::class . '@create')->name('auth.signup');
-Route::get('/login', LoginController::class . '@adminLogin');
+
+Route::get('/login', AdminController::class . '@index');
+Route::post('/admin', AdminController::class . '@save')->name('admin.save');
+
 
 
 

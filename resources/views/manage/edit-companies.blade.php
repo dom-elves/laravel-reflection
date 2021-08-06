@@ -3,7 +3,7 @@
 @section('companies-edit')
 <h1> edit </h1>
 
-<form action="" method="POST" action="{{ route("manage.companies-list.edit",  ['id' => $company->id]) }}">
+<form method="POST" action="{{ route("manage.companies-list.edit",  ['id' => $company->id]) }}">
   @method('POST')
   @csrf
   <input type="text" name="name" value="{{ $company->name }}">
