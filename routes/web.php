@@ -30,12 +30,13 @@ Route::get('/', function () {
 
 Route::view('/index', 'index');
 Route::view('/delete', 'delete');
+Route::view('/save', 'save');
 Route::view('/thankyou', 'auth.thankyou');
 
 
 Route::post('/companies', CompaniesController::class . '@save')->name('manage.companies.save');
 Route::post('/employees', EmployeesController::class . '@save')->name('manage.employees.save');
-Route::post('/signup', LoginController::class . '@save')->name('auth.signup.save');
+
 
 
 Route::get('/employees-list/edit-employees/{id}', EmployeesController::class . '@edit')->name('manage.employees-list.edit');
@@ -49,7 +50,7 @@ Route::post('/companies-list/{id}', CompaniesController::class . '@destroy')->na
 Route::post('/employees-list/{id}', EmployeesController::class . '@destroy')->name('manage.employees-list.destroy');
 
 
-Route::get('/company-logos/{id}', CompaniesController::class . '@logos')->name('manage.company-logos.logos');
+Route::get('/company-logos/{id}/', CompaniesController::class . '@logos')->name('manage.company-logos.logos');
 
 
 Route::get('/companies', CompaniesController::class . '@create')->name('manage.companies');

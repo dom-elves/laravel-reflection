@@ -3,7 +3,9 @@
 
 
 @section('login')
-
+<head>
+  <script type="text/javascript" src="{{ asset('/assets/js/app.js') }}"></script>
+</head>
 
 <div class="logo"></div>
 
@@ -19,10 +21,8 @@
        <label for="password"><b>Password</b></label>
        <input type="password" placeholder="Enter Password" name="password" required id="password">
 
-       <button type="submit">Login</button>
-       <label>
-         <input type="checkbox" checked="checked" name="remember"> Remember me
-       </label>
+       <button type="submit" id="loginButton">Login</button>
+
      </div>
 
 

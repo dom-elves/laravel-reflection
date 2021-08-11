@@ -18,7 +18,7 @@ class CompaniesController extends Controller
 
       $request->validate([
         'name' => 'required',
-        // 'email' => 'required|email|unique:companies,email',
+        'email' => 'required|email|unique:companies,email',
         // 'logo' => 'image',
         'website' => 'required'
       ]);
@@ -27,11 +27,11 @@ class CompaniesController extends Controller
       $company->id = $request->id;
       $company->name = $request->name;
       $company->email = $request->email;
-      $company->logo = $request->logo->storeAs('public', $request->logo->getClientOriginalName());
+      $company->logo = $request->logo->getClientOriginalName();
       $company->website = $request->website;
       $company->save();
 
-      return redirect('/companies-list');
+      return redirect('/save');
     }
 
     public function destroy($id)
@@ -61,17 +61,19 @@ class CompaniesController extends Controller
         $company->save();
 
 
-        return redirect('/companies-list');
+        return view('/save');
       }
 
      public function logos(Request $request, $id)
        {
           $company = Company::find($id);
-          $company->logo = $request->logo;
           $logo = $company->logo;
-          dd($logo);
 
-         return view('manage.company-logos' , ['logo' => $company]);
+          $link = asset('public/storage' . '/'.$logo );
+
+
+
+         return view('manage.company-logos')->with('logo', $logo);
        }
 
 

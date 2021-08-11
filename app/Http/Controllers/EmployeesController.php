@@ -36,7 +36,7 @@ class EmployeesController extends Controller
       $employee->password = $request->password;
       $employee->save();
       // dd('test');
-      return redirect('/employees-list');
+      return redirect('/save');
     }
 
 
@@ -68,6 +68,6 @@ class EmployeesController extends Controller
       $employee->phone_number = $request->phone_number;
       $employee->save();
 
-      return redirect('/employees-list');
+      return view('/save');
     }
 }

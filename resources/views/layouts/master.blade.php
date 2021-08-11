@@ -1,7 +1,7 @@
 <head>
  <script src="https://kit.fontawesome.com/33e7ba0ce6.js" crossorigin="anonymous"></script>
  <link href="{{ asset('/assets/css/app.css') }}" rel="stylesheet">
- <script type="text/javascript" src="{{ asset('/assets/js/app.js') }}"></script>
+
 </head>
 
 
@@ -12,11 +12,14 @@
       <h1>Welcome to the administration center</h1>
       <h2>Please log in to proceed</h2>
     </div>
-
-    <div class="home-button">
-      <a href="/index"><button><i class="fas fa-home"></i></button></a>
+    <div class="buttons">
+      <div class="home-button">
+        <a href=" {{ url()->previous() }}"><button><i class="fas fa-arrow-left"></i></button></a>
+      </div>
+      <div class="home-button">
+        <a href="/index"><button><i class="fas fa-home"></i></button></a>
+      </div>
     </div>
-
   </div>
 
 
@@ -36,4 +39,5 @@
 @yield('companies-list')
 @yield('employees-edit')
 @yield('companies-edit')
+@yield('company-logos')
 </div>

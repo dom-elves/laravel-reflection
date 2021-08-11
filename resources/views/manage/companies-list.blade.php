@@ -16,7 +16,7 @@
       <td>{{$company->id}}</td>
       <td>{{$company->name}}</td>
       <td>{{$company->email}}</td>
-      <td><a href="{{ route('manage.company-logos.logos', ['id' => $company->id]) }}" target="_blank">{{ $company->logo }}</a></td>
+      <td><a href="{{ route('manage.company-logos.logos', ['id' => $company->id]) }}" target="_blank" name="logo">{{ $company->logo }}</a></td>
       <td>{{$company->website}}</td>
       <td>
         <form method="POST" action="{{ route('manage.companies-list.destroy',  ['id' => $company->id]) }}">
@@ -28,7 +28,7 @@
         </form>
       </td>
 
-      <td class="edit-button"><a href="{{ route('manage.companies-list.edit', ['id' => $company->id]) }}"><i class="fas fa-edit"></i></a></td>
+      <td><button class="edit-button"><a href="{{ route('manage.companies-list.edit', ['id' => $company->id]) }}"><i class="fas fa-edit"></i></a></button></td>
 
     </tr>
 @endforeach

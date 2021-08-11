@@ -39,21 +39,45 @@ header {
     h2 {
       color: #FFFFFF;
     }
-  }
-}
 
-.home-button {
-  button {
-    background-color: #80aaff;
-    color: #FFFFFF;
-    border-radius: 5px;
-    border: 2px solid #FFFFFF;
-    height: 80px;
-    width: 80px;
-    font-size: 50px;
-    &:hover {
-      background-color: #FFFFFF;
-      color: #80aaff;
+
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  .home-button {
+    button {
+      background-color: #80aaff;
+      color: #FFFFFF;
+      border-radius: 5px;
+      border: 2px solid #FFFFFF;
+      height: 80px;
+      width: 80px;
+      font-size: 50px;
+      &:hover {
+        background-color: #FFFFFF;
+        color: #80aaff;
+      }
     }
   }
+}
+}
+}
+
+//both tables
+table {
+  background-color: #e6e6ff;
+  border: 2px solid #80aaff;
+  margin: 10px;
+  tr:nth-child(even){
+    background-color: #ccccff;
+  }
+  td {
+    align-items: center;
+    height: 70px;
+
+  }
+}
+form {
+  margin: 0px;
 }

@@ -7,22 +7,25 @@
 <h3>what would you like to do?<h3>
 
   <div class="options">
-
-    <div>
-      <a href="{{ route("auth.signup") }}"><button>add a company</button></a>
+    <div class="icon-block">
+    <div class="icon">
+      <a href="/companies-list"><i class="far fa-building"></i></a>
     </div>
 
-    <div>
-      <a href="/login"><button>manage a company</button></a>
+    <div class="icon">
+      <a href="/companies"><i class="fas fa-plus"></i></a>
+    </div>
+  </div>
+  <div class="icon-block">
+    <div class="icon">
+      <a href="/employees-list"><i class="fas fa-user-edit"></i></a>
     </div>
 
-    <div>
-      <a href="/login"><button>add an employee</button></a>
+    <div class="icon">
+      <a href="/employees"><i class="fas fa-plus"></i></a>
     </div>
+</div>
 
-    <div>
-      <a href="/login"><button>manage an employee</button></a>
-    </div>
   </div>
 
 @endsection

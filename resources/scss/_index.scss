@@ -6,5 +6,19 @@ h1 {
 
 .options {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  .icon-block {
+    flex-direction: row;
+    display: flex;
+    .icon {
+      margin: 0px 10px 0px 10px;
+    }
+    i {
+      width: 100px;
+      height: 100px;
+      font-size: 70px;
+      color: #80aaff;
+    }
+  }
 }

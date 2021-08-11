@@ -1,9 +1,9 @@
+@extends('layouts.master')
 
-
+@section('company-logos')
 <h1>company logo</h1>
 
-<!-- <form role="form" action="{{ URL::asset('storage/public' . $logo) }}" enctype="multipart/form-data"> -->
-<img src="{{ route('manage.company-logos.logos', 'storage/public/' . $logo) }}">
+  <img src="{{ asset('/assets/storage/' . $logo ) }}">
 
 
-<!-- </form> -->
+@endsection

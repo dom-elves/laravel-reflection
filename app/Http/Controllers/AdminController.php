@@ -14,21 +14,21 @@ class AdminController extends Controller
 
   public function save(Request $request)
     {
-      // if ($request->email !== 'admin@admin.com' && $request->password !== 'password') {
-      //
-      //   dd('bad mail and password');
-      // } else {
-      //     if  ($request->email !== 'admin@admin.com') {
-      //
-      //       dd('bad mail');
-      //     } else {
-      //       if ($request->email === 'admin@admin.com' && $request->password !== 'password') {
-      //
-      //         dd('bad password');
-      //       } else {
-      //         return view('admin');
-      //       }
-      //     }
-      //   }
+      if ($request->email !== 'admin@admin.com' && $request->password !== 'password') {
+
+        return view('auth.login');
+      } else {
+          if  ($request->email !== 'admin@admin.com') {
+
+            return view('auth.login');
+          } else {
+            if ($request->email === 'admin@admin.com' && $request->password !== 'password') {
+
+              return view('auth.login');
+            } else {
+              return view('admin');
+            }
+          }
+        }
     }
 }
