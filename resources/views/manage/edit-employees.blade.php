@@ -1,9 +1,9 @@
 @extends('layouts.master')
 
 @section('employees-edit')
-<h1> edit </h1>
+<h1> Edit Employee Information </h1>
 
-<form action="" method="POST" action="{{ route("manage.employees-list.edit",  ['id' => $employee->id]) }}">
+<form action="" method="POST" action="{{ route("manage.employees-list.edit",  ['id' => $employee->id]) }}" id="edit-form">
   @method('POST')
   @csrf
   <input type="text" name="first_name" value="{{ $employee->first_name }}">

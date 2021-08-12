@@ -31,7 +31,7 @@
             </button>
           </td>
         </form>
-          <td class="edit-button"><a href="{{ route('manage.employees-list.edit',  ['id' => $employee->id]) }}"><i class="fas fa-edit"></i></a></td>
+          <td><button class="edit-button"><a href="{{ route('manage.employees-list.edit',  ['id' => $employee->id]) }}"><i class="fas fa-edit"></i></a></button></td>
 
         </tr>
     @endforeach

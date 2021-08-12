@@ -2,8 +2,7 @@
 
 @section('index')
 
-<h1>welcome to the administration center</h1>
-<h2>please select what you would like to do</h2>
+
 
 <div class="options">
 

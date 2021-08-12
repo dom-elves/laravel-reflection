@@ -21,10 +21,9 @@
      <input type="text" placeholder="Company Website" name="website" required>
 
      <button type="submit">Sign Up</button>
-     <label>
-       <input type="checkbox" checked="checked" name="remember"> Remember me
-     </label>
 
+     <p><a href="/companies-list">View the list</a></p>
+   </form>
   <div>
 
 

@@ -1,0 +1,22 @@
+
+
+.container {
+  display: flex;
+  height: 100%;
+  width: 100vw;
+  .delete-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px auto 0px auto;
+    border: 2px solid #d10a0a;
+    border-radius: 50%;
+    height: 310px;
+    width: 310px;
+    justify-content: center;
+
+    h1, h3 {
+      color: #d10a0a;
+    }
+  }
+}

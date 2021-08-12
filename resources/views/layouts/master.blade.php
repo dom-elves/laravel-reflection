@@ -9,8 +9,7 @@
 <header>
   <div class="header">
     <div class="titles">
-      <h1>Welcome to the administration center</h1>
-      <h2>Please log in to proceed</h2>
+      <h1>Administration Center</h1>
     </div>
     <div class="buttons">
       <div class="home-button">
@@ -40,4 +39,6 @@
 @yield('employees-edit')
 @yield('companies-edit')
 @yield('company-logos')
+@yield('save')
+@yield('delete')
 </div>

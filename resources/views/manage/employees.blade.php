@@ -2,12 +2,12 @@
 
 @section('employees')
 
-<h1>add a new employee</h1>
+<h1>Add a new employee</h1>
 
 <div class="create-employee">
   <form action="{{ route("manage.employees.save") }}" method="post">
     @csrf
-     <p>Fields marked with a * are required</p>
+
      <label for="first_name"><b>First Name *</b></label>
      <input type="text" placeholder="Enter First Name" name="first_name" required>
 
@@ -27,9 +27,10 @@
      <input type="password" placeholder="Enter Password" name="password" required>
 
      <button type="submit">Sign Up</button>
-     
+     <p><a href="/employees-list">View the list</a></p>
+   </form>
 
-  <div>
+ </div>
 
 
 @endsection
